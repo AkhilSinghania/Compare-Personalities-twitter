@@ -58,3 +58,19 @@ def compare(dict1, dict2):
   
 user_handle = "@any username you want to compare"
 celebrity_handle = "@any username you want to compare"
+#First, flatten the results from the Watson PI API
+user = flatten(user_result)
+celebrity = flatten(celebrity_result)
+
+#Then, compare the results of the Watson PI API by calculating the distance between traits
+compared_results = compare(user,celebrity)
+
+sorted_result = sorted(compared_results.items(), key=operator.itemgetter(1))
+
+for keys, value in sorted_result[:5]:
+    print keys,
+    print(user[keys]),
+    print ('->'),
+    print (celebrity[keys]),
+    print ('->'),
+    print (compared_results[keys])
