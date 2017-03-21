@@ -1,4 +1,5 @@
 # PersonalityInsight
+It basically compares two different personalities based on the basis of their twitter tweets.
 
 The name of this application is PersonalityInsight.
 
